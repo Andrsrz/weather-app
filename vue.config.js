@@ -1,4 +1,5 @@
 module.exports = {
+	publicPath: 'weather-app',
 	configureWebpack: {
 		plugins: [
 			// new myWebpackPlugin()
