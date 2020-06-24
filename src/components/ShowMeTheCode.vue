@@ -1,7 +1,7 @@
 <template>
-	<footer>
-		<div @click="goToCode">
-			<span class="fas fa-code icon" title="Show me the code"></span>
+	<footer class="site-footer">
+		<div class="icon-container" @click="goToCode">
+			<span class="fas fa-code icon-child" title="Show me the code"></span>
 		</div>
 	</footer>
 </template>
@@ -18,8 +18,13 @@ export default {
 </script>
 
 <style scoped>
-.icon {
-	margin: 30px;
+.icon-container {
+	display: table;
+	margin: auto;
+}
+
+.icon-child {
+	display: table-row;
 	font-size: 25px;
 	cursor: pointer;
 }
