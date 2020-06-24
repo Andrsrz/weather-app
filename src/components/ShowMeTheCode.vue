@@ -1,6 +1,8 @@
 <template>
 	<footer>
-		<button type="button" title="Show me the code" @click="goToCode">Code</button>
+		<div @click="goToCode">
+			<span class="fas fa-code icon" title="Show me the code"></span>
+		</div>
 	</footer>
 </template>
 
@@ -16,7 +18,9 @@ export default {
 </script>
 
 <style scoped>
-button {
+.icon {
 	margin: 30px;
+	font-size: 25px;
+	cursor: pointer;
 }
 </style>
