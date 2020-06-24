@@ -6,8 +6,8 @@
 				<h1>{{ weather.city }}, {{ weather.country }}</h1>
 			</span>
 			<span>
-				<h1>{{ weather.temp }}</h1>
-				<h3>Feels like {{ weather.feels }}</h3>
+				<h1>{{ weather.temp }} {{ weather.unit }}</h1>
+				<h3>Feels like {{ weather.feels }} {{ weather.unit }}</h3>
 			</span>
 		</div>
 		<div>
@@ -20,7 +20,11 @@
 	<div class="weather bottom">
 		<div class="extra-info">
 			<span>
-				<h3>Max : {{ weather.tempMax }}<br>Min : {{ weather.tempMin }}</h3>
+				<h3>
+					Max : {{ weather.tempMax }} {{ weather.unit }}
+					<br>
+					Min : {{ weather.tempMin }} {{ weather.unit }}
+				</h3>
 			</span>
 		</div>
 		<div class="icon">

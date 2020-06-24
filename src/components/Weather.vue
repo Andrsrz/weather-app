@@ -27,7 +27,7 @@ export default {
 	methods: {
 		lookForWeather(){
 			if(this.city != ''){
-				this.myWeather.fetchApi(this.city);
+				this.myWeather.fetchApi(this.city, 'imperial');
 				this.city = '';
 				this.isVisible = true;
 			}else{
