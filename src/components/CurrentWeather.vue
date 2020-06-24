@@ -50,17 +50,12 @@ export default {
 	},
 	methods: {
 		changeUnits(){
-			if(this.weather.units == "metric"){
-				this.convertCtoF();
+			if(this.weather.unit == '°C'){
+				this.weather.fetchApi(this.weather.city, 'imperial');
 			}else{
-				this.convertFtoC();
+				this.weather.unit = '°C';
+				this.weather.fetchApi(this.weather.city, 'metric');
 			}
-		},
-		convertCtoF(){
-			console.log("C to F");
-		},
-		convertFtoC(){
-			console.log("F to C");
 		}
 	}
 }
