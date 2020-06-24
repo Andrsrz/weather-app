@@ -1,7 +1,9 @@
 <template>
 <div>
-	<input type="text" v-model="city"/>
-	<button type="button" @click="lookForWeather">Search</button>
+	<div class="search">
+		<input type="text" v-model="city"/>
+		<button type="button" @click="lookForWeather">Search</button>
+	</div>
 	<CurrentWeather v-show="isVisible" :weather="myWeather" />
 </div>
 </template>
@@ -24,27 +26,24 @@ export default {
 	},
 	methods: {
 		lookForWeather(){
-			this.myWeather.fetchApi(this.city);
-			this.city = '';
-			this.isVisible = true;
+			if(this.city != ''){
+				this.myWeather.fetchApi(this.city);
+				this.city = '';
+				this.isVisible = true;
+			}else{
+				alert("Enter a valid City");
+			}
 		}
 	}
 }
 </script>
 
 <style scoped>
-h3 {
-	margin: 40px 0 0;
+.search {
+	margin: 10px;
 }
-ul {
-	list-style-type: none;
-	padding: 0;
-}
-li {
-	display: inline-block;
-	margin: 0 10px;
-}
-a {
-	color: #42b983;
+
+.search > * {
+	margin: 5px;
 }
 </style>
