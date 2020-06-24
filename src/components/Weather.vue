@@ -6,9 +6,12 @@
 			<option value="metric" selected>°C</option>
 			<option value="imperial">°F</option>
 		</select>
-		<button type="button" @click="lookForWeather">Search</button>
+		<button type="button" @click="lookForWeather">
+			<span class="fas fa-search"></span>
+		</button>
 	</div>
 	<CurrentWeather v-show="isVisible" :weather="myWeather" />
+	<br><br>
 </div>
 </template>
 
