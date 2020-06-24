@@ -10,10 +10,8 @@
 				<h3>Feels like {{ weather.feels }} {{ weather.unit }}</h3>
 			</span>
 		</div>
-		<div>
-			<span>
-				<h2>{{ weather.weather }}<br>{{ weather.description }}</h2>
-			</span>
+		<div class="icon">
+			<span v-html="image"></span>
 		</div>
 	</div>
 	<hr>
@@ -27,10 +25,9 @@
 				</h3>
 			</span>
 		</div>
-		<div class="icon">
+		<div>
 			<span>
-				<img />
-				{{ weather.iconUrl }}
+				<h2>{{ weather.weather }}<br>{{ weather.description }}</h2>
 			</span>
 		</div>
 	</div>
@@ -46,6 +43,7 @@ export default {
 	},
 	data() {
 		return {
+			image: "<img src='" + this.weather.iconUrl + "' />"
 		}
 	},
 	methods: {
