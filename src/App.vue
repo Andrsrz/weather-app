@@ -1,15 +1,11 @@
 <template>
 	<div id="app">
-		<WeatherCom msg="This is the weather"/>
+		<WeatherCom />
 	</div>
 </template>
 
 <script>
 import WeatherCom from './components/Weather.vue';
-import { Weather } from './Weather.js';
-
-let weather = new Weather();
-weather.fetchApi("Ontario");
 
 export default {
 	name: 'App',
