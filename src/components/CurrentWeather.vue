@@ -7,11 +7,13 @@
 			</span>
 			<span>
 				<h1>{{ weather.temp }} {{ weather.unit }}</h1>
-				<h3>Feels like {{ weather.feels }} {{ weather.unit }}</h3>
+				<h4>Feels like {{ weather.feels }} {{ weather.unit }}</h4>
 			</span>
 		</div>
 		<div class="icon">
-			<span v-html="image"></span>
+			<span>
+				<img v-bind:src="weather.iconUrl" />
+			</span>
 		</div>
 	</div>
 	<hr>
@@ -40,11 +42,6 @@ export default {
 	name: 'CurrentWeather',
 	props: {
 		weather: Object
-	},
-	data() {
-		return {
-			image: "<img src='" + this.weather.iconUrl + "' />"
-		}
 	},
 	methods: {
 		changeUnits(){
