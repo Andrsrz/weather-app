@@ -2,6 +2,7 @@ class Weather{
 	constructor(city, country, weather, description, icon, temp, feels, tempMax, tempMin){
 		this.city = city ? city : '',
 		this.country = country ? country : '',
+		this.weather = weather ? weather : '',
 		this.description = description ? description : '',
 		this.icon = icon ? icon : '',
 		this.temp = temp ? temp : '',
