@@ -1,9 +1,11 @@
 module.exports = {
 	publicPath: '/weather-app/',
-	configureWebpack: {
-		plugins: [
-			// new myWebpackPlugin()
-			// Now I don't need this
-		]
+	chainWebpack: config => {
+		config
+		.plugin('html')
+		.tap(args => {
+			args[0].title = 'Weather Forecast'
+			return args
+		})
 	}
 }
