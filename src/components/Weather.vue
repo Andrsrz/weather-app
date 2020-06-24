@@ -2,25 +2,31 @@
 <div>
 	<input type="text" v-model="city"/>
 	<button type="button" @click="lookForWeather">Search</button>
-	<h1></h1>
+	<CurrentWeather v-show="isVisible" />
 </div>
 </template>
 
 <script>
 import { Weather } from '../Weather.js';
+import CurrentWeather from './CurrentWeather.vue';
 
 export default {
 	name: 'WeatherCom',
+	components: {
+		CurrentWeather
+	},
 	data() {
 		return {
-			city: ''
+			myWeather: new Weather(),
+			city: '',
+			isVisible: false
 		}
 	},
 	methods: {
 		lookForWeather(){
-			let weather = new Weather();
-			weather.fetchApi(this.city);
+			this.myWeather.fetchApi(this.city);
 			this.city = '';
+			this.isVisisble = true;
 		}
 	}
 }
