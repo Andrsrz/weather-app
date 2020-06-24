@@ -3,23 +3,23 @@
 	<div class="weather top">
 		<div class="info-city">
 			<span>
-				{{ weather.city }},{{ country }}
+				{{ weather.city }},{{ weather.country }}
 			</span>
 			<span>
-				{{ temp }},{{ feels }}
+				{{ weather.temp }},{{ weather.feels }}
 			</span>
 		</div>
 		<div>
-			<span>{{ weather }},{{ description }}</span>
+			<span>{{ weather.weather }},{{ weather.description }}</span>
 		</div>
 	</div>
 	<hr>
 	<div class="weather bottom">
 		<div class="extra-info">
-			<span>{{ tempMax }},{{ tempMin }}</span>
+			<span>{{ weather.tempMax }},{{ weather.tempMin }}</span>
 		</div>
 		<div class="icon">
-			<span>{{ icon  }}</span>
+			<span>{{ weather.icon  }}</span>
 		</div>
 	</div>
 </div>

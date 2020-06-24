@@ -2,7 +2,7 @@
 <div>
 	<input type="text" v-model="city"/>
 	<button type="button" @click="lookForWeather">Search</button>
-	<CurrentWeather v-show="isVisible" />
+	<CurrentWeather v-show="isVisible" :weather="myWeather" />
 </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
 		lookForWeather(){
 			this.myWeather.fetchApi(this.city);
 			this.city = '';
-			this.isVisisble = true;
+			this.isVisible = true;
 		}
 	}
 }
