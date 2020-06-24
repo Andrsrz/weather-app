@@ -1,10 +1,11 @@
 class Weather{
-	constructor(city, country, weather, description, icon, temp, feels, tempMax, tempMin, unit){
+	constructor(city, country, weather, description, icon, iconUrl, temp, feels, tempMax, tempMin, unit){
 		this.city = city ? city : '',
 		this.country = country ? country : '',
 		this.weather = weather ? weather : '',
 		this.description = description ? description : '',
 		this.icon = icon ? icon : '',
+		this.iconUrl = iconUrl ? iconUrl : '',
 		this.temp = temp ? temp : '',
 		this.feels = feels ? feels : '',
 		this.tempMax = tempMax ? tempMax : '',
@@ -16,6 +17,8 @@ class Weather{
 		const URL = "https://api.openweathermap.org/data/2.5/weather?q=";
 		const KEY = "&appid=0e1e0551035f76330f3f9be79744f681";
 		const UNITS = "&units=";
+		const ICON_URL_LEFT = "https://openweathermap.org/img/wn/";
+		const ICON_URL_RIGHT = "@4x.png";
 
 		try{
 			let actualUrl = URL + userLocation + UNITS + userUnits + KEY;
@@ -27,6 +30,7 @@ class Weather{
 			this.weather = data.weather[0].main;
 			this.description = data.weather[0].description;
 			this.icon = data.weather[0].icon;
+			this.iconUrl = ICON_URL_LEFT + this.icon + ICON_URL_RIGHT;
 			this.temp = data.main.temp;
 			this.feels = data.main.feels_like
 			this.tempMax = data.main.temp_max;

@@ -28,9 +28,13 @@
 			</span>
 		</div>
 		<div class="icon">
-			<span>{{ weather.icon  }}</span>
+			<span>
+				<img />
+				{{ weather.iconUrl }}
+			</span>
 		</div>
 	</div>
+	<button type="button" @click="changeUnits">Change Units</button>
 </div>
 </template>
 
@@ -42,6 +46,21 @@ export default {
 	},
 	data() {
 		return {
+		}
+	},
+	methods: {
+		changeUnits(){
+			if(this.weather.units == "metric"){
+				this.convertCtoF();
+			}else{
+				this.convertFtoC();
+			}
+		},
+		convertCtoF(){
+			console.log("C to F");
+		},
+		convertFtoC(){
+			console.log("F to C");
 		}
 	}
 }
