@@ -1,16 +1,20 @@
 <template>
 	<div id="app">
-		<HelloWorld msg="This is a message"/>
+		<WeatherCom msg="This is the weather"/>
 	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WeatherCom from './components/Weather.vue';
+import { Weather } from './Weather.js';
+
+let weather = new Weather();
+weather.fetchApi("Ontario");
 
 export default {
 	name: 'App',
 	components: {
-		HelloWorld
+		WeatherCom
 	}
 }
 </script>
