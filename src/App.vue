@@ -1,16 +1,19 @@
 <template>
-	<div id="app">
+	<main id="app">
 		<WeatherCom />
-	</div>
+		<ShowMeTheCode />
+	</main>
 </template>
 
 <script>
 import WeatherCom from './components/Weather.vue';
+import ShowMeTheCode from './components/ShowMeTheCode.vue';
 
 export default {
 	name: 'App',
 	components: {
-		WeatherCom
+		WeatherCom,
+		ShowMeTheCode
 	}
 }
 </script>
