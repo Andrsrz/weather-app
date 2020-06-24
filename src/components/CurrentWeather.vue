@@ -33,7 +33,7 @@
 			</span>
 		</div>
 	</div>
-	<button type="button" @click="changeUnits">
+	<button type="button" title="Change Units" @click="changeUnits">
 		<span class="fas fa-exchange-alt"></span>
 	</button>
 </div>

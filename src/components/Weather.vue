@@ -6,7 +6,7 @@
 			<option value="metric" selected>°C</option>
 			<option value="imperial">°F</option>
 		</select>
-		<button type="button" @click="lookForWeather">
+		<button type="button" title="Search" @click="lookForWeather">
 			<span class="fas fa-search"></span>
 		</button>
 	</div>
