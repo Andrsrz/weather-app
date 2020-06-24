@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .weather-container {
-	width: 50%;
+	width: 35%;
 	margin: auto;
 	text-align: center;
 }
@@ -66,6 +66,12 @@ export default {
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	align-items: center;
+}
+
+@media all and (max-width: 1500px){
+	.weather-container {
+		width: 50%;
+	}
 }
 
 @media all and (max-width: 800px){
