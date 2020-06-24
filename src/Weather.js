@@ -24,7 +24,6 @@ class Weather{
 			let actualUrl = URL + userLocation + UNITS + userUnits + KEY;
 			const response = await fetch(actualUrl, { mode: 'cors' });
 			const data = await response.json();
-			console.log(data);
 			this.city = data.name;
 			this.country = data.sys.country;
 			this.weather = data.weather[0].main;

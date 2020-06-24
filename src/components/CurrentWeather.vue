@@ -16,7 +16,6 @@
 			</span>
 		</div>
 	</div>
-	<hr>
 	<div class="weather bottom">
 		<div class="extra-info">
 			<span>
@@ -29,7 +28,8 @@
 		</div>
 		<div>
 			<span>
-				<h2>{{ weather.weather }}<br>{{ weather.description }}</h2>
+				<h2>{{ weather.weather }}</h2>
+				<h4>{{ weather.description }}</h4>
 			</span>
 		</div>
 	</div>
@@ -61,6 +61,10 @@ export default {
 	width: 35%;
 	margin: auto;
 	text-align: center;
+	border-radius: 5px;
+	border: 2px solid #333;
+	padding: 10px;
+	background-color: #98B4D4;
 }
 
 .weather {
