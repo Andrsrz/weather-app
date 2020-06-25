@@ -1,7 +1,7 @@
 <template>
 <div>
 	<div class="search">
-		<input type="text" placeholder="Tokyo" v-model="city"/>
+		<input type="text" placeholder="Tokyo" autofocus v-model="city"/>
 		<select name="untis" v-model="units" >
 			<option value="" selected>Select Untis</option>
 			<option value="metric">°C</option>
