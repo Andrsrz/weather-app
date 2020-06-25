@@ -12,6 +12,10 @@ want to use and you'll have right back!
   * [OpenWeather](https://openweathermap.org/current)
   * [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 
+## Know Issues
+Right now I couldn't test properly the Geolocation option because it keeps
+returning me that "Location information is unavailable".
+
 ## Acknowledgement
 This project was made posible thanks to [The Odin Project](https://www.theodinproject.com/).
 
