@@ -45,13 +45,18 @@ export default {
 	props: {
 		weather: Object
 	},
+	data() {
+		return {
+			geolocation: []
+		}
+	},
 	methods: {
 		changeUnits(){
 			if(this.weather.unit == '°C'){
-				this.weather.fetchApi(this.weather.city, 'imperial');
+				this.weather.fetchApi(this.weather.city, 'imperial', this.geolocation);
 			}else{
 				this.weather.unit = '°C';
-				this.weather.fetchApi(this.weather.city, 'metric');
+				this.weather.fetchApi(this.weather.city, 'metric', this.geolocation);
 			}
 		}
 	}
@@ -59,6 +64,10 @@ export default {
 </script>
 
 <style scoped>
+button {
+	padding: 5px;
+}
+
 .weather-container {
 	width: 35%;
 	margin: auto;

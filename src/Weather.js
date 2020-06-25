@@ -34,7 +34,7 @@ class Weather{
 
 		try{
 			const response = await fetch(actualUrl, { mode: 'cors' });
-			const data = await response.jsion();
+			const data = await response.json();
 			this.lat = data.coord.lat;
 			this.lon = data.coord.lon;
 			this.city = data.name;
