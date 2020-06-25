@@ -1,5 +1,5 @@
 class Weather{
-	constructor(city, country, weather, description, icon, iconUrl, temp, feels, tempMax, tempMin, unit){
+	constructor(city, country, weather, description, icon, iconUrl, temp, feels, tempMax, tempMin, unit, lat, lon){
 		this.city = city ? city : '',
 		this.country = country ? country : '',
 		this.weather = weather ? weather : '',
@@ -10,20 +10,33 @@ class Weather{
 		this.feels = feels ? feels : '',
 		this.tempMax = tempMax ? tempMax : '',
 		this.tempMin = tempMin ? tempMin : '',
-		this.unit = unit ? unit : ''
+		this.unit = unit ? unit : '',
+		this.lat = lat ? lat : '',
+		this.lon = lon ? lon : ''
 	}
 
-	async fetchApi(userLocation, userUnits){
-		const URL = "https://api.openweathermap.org/data/2.5/weather?q=";
+	async fetchApi(userLocation, userUnits, geolocation){
+		const URL = "https://api.openweathermap.org/data/2.5/weather?";
+		const CITY = "q=";
+		const LAT = "lat=";
+		const LON = "&lon=";
 		const KEY = "&appid=0e1e0551035f76330f3f9be79744f681";
 		const UNITS = "&units=";
 		const ICON_URL_LEFT = "https://openweathermap.org/img/wn/";
 		const ICON_URL_RIGHT = "@4x.png";
+		let actualUrl = "";
+
+		if(geolocation.length == 0){
+			actualUrl = URL + CITY + userLocation + UNITS + userUnits + KEY;
+		}else{
+			actualUrl = URL + LAT + geolocation[0] + LON + geolocation[1] + UNITS + userUnits + KEY;
+		}
 
 		try{
-			let actualUrl = URL + userLocation + UNITS + userUnits + KEY;
 			const response = await fetch(actualUrl, { mode: 'cors' });
-			const data = await response.json();
+			const data = await response.jsion();
+			this.lat = data.coord.lat;
+			this.lon = data.coord.lon;
 			this.city = data.name;
 			this.country = data.sys.country;
 			this.weather = data.weather[0].main;
