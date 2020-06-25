@@ -3,7 +3,8 @@
 	<div class="search">
 		<input type="text" placeholder="Tokyo" v-model="city"/>
 		<select name="untis" v-model="units" >
-			<option value="metric" selected>°C</option>
+			<option value="" selected>Select Untis</option>
+			<option value="metric">°C</option>
 			<option value="imperial">°F</option>
 		</select>
 		<button type="button" title="Search" @click="lookForWeather">
