@@ -9,6 +9,8 @@ want to use and you'll have right back!
 * Setup a Vue project with [vue-cli](https://cli.vuejs.org/)
 * [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 * Using API's
+  * [OpenWeather](https://openweathermap.org/current)
+  * [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 
 ## Acknowledgement
 This project was made posible thanks to [The Odin Project](https://www.theodinproject.com/).
